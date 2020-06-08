@@ -73,14 +73,22 @@ $表示变量 根据自己习惯来
 ```$ss = array_column($array, 'data');```
 将数据转换为json格式，再范化为腾讯云图数据格式，把{替换为[{，}替换为 }]
 
-```$a= str_replace("{","[{",$json);
-  $b= str_replace("}","}]",$a);```
+```
+$a= str_replace("{","[{",$json);
+
+$b= str_replace("}","}]",$a);
+```
+  
 最后输出结果 
 
-```print($jsona);```
+```
+print($jsona);
+```
+
 整合起来就是
 
-```<?php
+```
+<?php
 
 $json= file_get_contents('https://api.bilibili.com/x/relation/stat?vmid=24749747');
 
