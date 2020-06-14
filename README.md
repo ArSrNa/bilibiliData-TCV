@@ -16,7 +16,7 @@ PHP，JavaScript基础
 
 API可以在github上找，也可以F12查找，github上有bilibili非官方整理的API[https://github.com/SocialSisterYi/bilibili-API-collect](https://github.com/SocialSisterYi/bilibili-API-collect)
 
-比如粉丝数，是这个API：[https://api.bilibili.com/x/relation/stat?vmid=24749747](https://api.bilibili.com/x/relation/stat?vmid=24749747)
+比如粉丝数，是这个API(必须使用http)：[http://api.bilibili.com/x/relation/stat?vmid=24749747](http://api.bilibili.com/x/relation/stat?vmid=24749747)
 
 ```
 其中：https://api.bilibili.com/x/relation/stat?vmid={查找的uid}
