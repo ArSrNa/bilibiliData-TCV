@@ -34,13 +34,13 @@ https://space.bilibili.com/24749747
 
 在腾讯云图里，编辑数据源用API，如果你直接输入[https://api.bilibili.com/x/relation/stat?vmid=24749747](https://api.bilibili.com/x/relation/stat?vmid=24749747)，得到的结果是
 
-```
+```json
 {"code":0,"message":"0","ttl":1,"data":{"mid":24749747,"following":179,"whisper":0,"black":4,"follower":7708}}
 ```
 
 格式化一下
 
-```
+```json
 {
     "code":0,
     "message":"0",
@@ -67,40 +67,40 @@ https://space.bilibili.com/24749747
 
 首先先获得bilibiliapi的内容：
 
-```
+```php
 //$表示变量 根据自己习惯来
 $json= file_get_contents('https://api.bilibili.com/x/relation/stat?vmid=24749747');
 ```
 
 再把json格式数据解码为php的数组
 
-```
+```php
 //注意这部分变量
 $array= array(json_decode($json));
 ```
 
 去掉返回的代码值，只提取data部分
 
-```
+```php
 $ss = array_column($array, 'data');
 ```
 
 将数据转换为json格式，再范化为腾讯云图数据格式，把"{"替换为"{"，"}"替换为"}"
 
-```
+```php
 $a= str_replace("{","[{",$json);
 $b= str_replace("}","}]",$a);
 ```
 
 最后输出结果 
 
-```
+```php
 print($jsona);
 ```
 
 整合起来就是
 
-```
+```php
 <?php
 $json= file_get_contents('https://api.bilibili.com/x/relation/stat?vmid=24749747');
 $array= array(json_decode($json));
@@ -128,7 +128,7 @@ PHP的API可以托管给腾讯云函数，每个月有100万次免费额度，�
 
 数据如下
 
-```
+```json
 [
   {
     "mid": 24749747,
